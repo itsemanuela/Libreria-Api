@@ -116,6 +116,31 @@
       <div class="container mt-5">
         <div id="contenitore-card" class="row"></div>
       </div>
+      <div
+        class="toast-container position-fixed bottom-0 end-0 p-3"
+        style="z-index: 11"
+      >
+        <div
+          id="liveToast"
+          class="toast hide"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-header bg-success text-white">
+            <strong class="me-auto">L'angolo del segnalibro</strong>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="toast-body" id="toast-message">
+            Libro aggiunto al carrello!
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <!-- place footer here -->

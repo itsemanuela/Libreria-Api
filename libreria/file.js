@@ -1,6 +1,8 @@
 // recuperiamo le informazioni dall'api library per effettuare un fetch delle informazioni che mi servono
 const apidata = "https://striveschool-api.herokuapp.com/books  ";
 
+let aggiungicarrello = [];
+
 const book = function () {
   fetch(apidata)
     .then((response) => {
@@ -31,12 +33,11 @@ const book = function () {
     <p class="card-text"> ${prezzo}</p>
     <p class="card-text"> ${codice}</p>
     <a href="#" class="btn btn-primary">Acquista</a>
+    <a href="#" class="btn btn-primary"  onclick="this.closest('.col-6').remove()  ">Scarta   </a>
   </div>
 </div>   `;
       });
     })
-
-    //manipolo il dom
 
     .catch((err) => {
       console.log("Errore generico");
