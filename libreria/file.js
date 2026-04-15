@@ -10,7 +10,7 @@ const book = function () {
       if (response.ok) {
         return response.json();
       } else {
-        throw new Error("La risposta che cerchi non esiste");
+        throw new Error("La risposta che cerchi non esiste", response.status);
       }
     })
     .then((arraydilibri) => {
@@ -44,4 +44,22 @@ const book = function () {
     });
 };
 
+let datosalvato = localStorage.getItem("libro");
+
+const paragrafo = document.createElement("p");
+const prendoid = document.getElementById("storage");
+
+if (prendoid) {
+  prendoid.appendChild(paragrafo);
+}
+
+const librosalvato = function () {
+  if (datosalvato) {
+    paragrafo.innerText = "Il libro salvato è: " + datosalvato;
+  } else {
+    paragrafo.innerText = "Nessun libro trovato in memoria.";
+  }
+};
+
+librosalvato();
 book();
